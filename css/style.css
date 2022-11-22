@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0; 
+    background: linear-gradient(to right, rgb(236, 217, 217), rgb(256,236,188),rgb(235, 221, 175), rgb(240, 203, 147));
+}
+
+.header {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-image: url("../img/header.png");
+    border-top-left-radius: 15px;
+    margin: auto auto;
+    margin-top: 13px;
+    width: 80%;
+    height: 150px;
+    /* border: 1px solid black; */
+}
+
+.brand {
+    font-size: 31px;
+    color: rgb(199, 93, 44);
+}
+
+.brand h1 {
+    margin-top: 4px;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto auto;
+    margin-top: 5px;
+    width: 80%;
+    height: 350px;
+}
+
+.add-item{
+    display: flex;
+    flex-flow: row wrap;
+    align-items:center;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 42px;
+}
+
+#campo-texto {
+    margin: auto auto;
+    font-size: 22px;
+    width: 69%;
+    height: 42px;
+}
+
+.btn-add {
+    margin: auto auto;
+    width: 31%;
+    height: 42px;
+    border-bottom-right-radius: 10px;
+    background: rgb(26, 121, 17);
+    color: rgb(212, 211, 211);
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lista {
+    display: flex;
+    flex-flow: column;
+    margin: auto auto;
+    margin-left: 0;
+    border-radius: 15px;
+    width: 67%;
+    height: 300px;
+    background: white;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+}
+
+.soma {
+    display: flex;
+    flex-flow: column wrap;
+    margin: auto auto;
+    margin-right: 0;
+    border-radius: 15px;
+    width: 31%;
+    height: 300px;
+    background: white;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.titulo-compras {
+    display: flex;
+    flex-flow: row wrap;
+    background: rgb(150, 89, 40);
+    width: 100;
+    height: 42px;
+}
+
+.titulo-compras h2 {
+    flex-grow: 1;
+    margin: auto auto;
+    text-align: center;
+    color: rgb(230, 184, 70);
+}
