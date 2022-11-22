@@ -2,17 +2,16 @@ let campoTexto = document.querySelector('#campo-texto');
 let butao = document.querySelector('.btn-add');
 let lista = document.querySelector('.lista');
 let listado = [];
-// let contador = 0;
 
 function addNewItem() {
     let valorCampo = campoTexto.value;
 
     if((valorCampo !== "") && (valorCampo !== null) && (valorCampo !== undefined)){
         let novoItem = `<div id="${listado.length}" class="item">
-    <div class="item-icone">
-        <i class="mdi mdi-checkbox-blank"></i>
+    <div onclick="selecionaItem(${listado.length})" class="item-icone">
+        <i id="icon_${listado.length}" class="mdi mdi-checkbox-blank"></i>
     </div>
-    <div class="item-nome">
+    <div onclick="selecionaItem(${listado.length})" class="item-nome">
         ${valorCampo}
     </div>
     <div class="item-botao">
@@ -32,6 +31,19 @@ function addNewItem() {
 function deletaItem(id) {
     let deleta = document.getElementById(id);
     deleta.remove();
+}
+
+function selecionaItem(id) {
+    let selecionado = document.getElementById(id);
+    let novoIcone = document.getElementById('icon_'+id);
+    
+    if (selecionado.classList.contains("clicado")) {
+        selecionado.classList.remove("clicado");
+        novoIcone.classList.replace("mdi-checkbox-marked", "mdi-checkbox-blank");
+    } else {
+        novoIcone.classList.replace("mdi-checkbox-blank", "mdi-checkbox-marked");
+        selecionado.classList.add("clicado");
+    }
 }
 
 // REMOVER ANTES DE ENTREGAR!!!!!!!!
