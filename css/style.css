@@ -18,7 +18,7 @@ body {
     margin: auto auto;
     margin-top: 13px;
     width: 80%;
-    height: 150px;
+    height: 140px;
 }
 
 .brand {
@@ -38,7 +38,6 @@ body {
     margin: auto auto;
     margin-top: 5px;
     width: 80%;
-    height: 350px;
 }
 
 .add-item{
@@ -87,7 +86,7 @@ body {
     margin-right: 0;
     border-radius: 15px;
     width: 31%;
-    height: 345px;
+    min-height: 345px;
     background: white;
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
