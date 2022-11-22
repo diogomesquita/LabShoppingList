@@ -8,7 +8,7 @@ function addNewItem() {
     let valorCampo = campoTexto.value;
 
     if((valorCampo !== "") && (valorCampo !== null) && (valorCampo !== undefined)){
-        let novoItem = `<div class="item">
+        let novoItem = `<div id="${listado.length}" class="item">
     <div class="item-icone">
         <i class="mdi mdi-checkbox-blank"></i>
     </div>
@@ -16,27 +16,22 @@ function addNewItem() {
         ${valorCampo}
     </div>
     <div class="item-botao">
-        <button onclick="deletaItem()" class="delete"> <i class="mdi mdi-trash-can-outline"></i> Deletar</button>
+        <button onclick="deletaItem(${listado.length})" class="delete"> <i class="mdi mdi-trash-can-outline"></i> Deletar</button>
     </div>
 </div>`;
     lista.innerHTML += novoItem;
 
-    /********* */
-    // contador++;
-    // localStorage.setItem(`${contador}`, `${valorCampo}`)
-
     listado.push(valorCampo);
     localStorage.setItem("listado", JSON.stringify(listado));
-    /******** */
     }
-    
 
     campoTexto.value = "";
     campoTexto.focus();
 }
 
-function deletaItem() {
-
+function deletaItem(id) {
+    let deleta = document.getElementById(id);
+    deleta.remove();
 }
 
 // REMOVER ANTES DE ENTREGAR!!!!!!!!
