@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./img/papyrus.ico" type="image/x-icon">
     <title>LabShoppingList</title>
@@ -15,19 +17,38 @@
             <h1>Lab Super Market - List</h1>
         </div>
     </header>
+
     <main class="main">
         <section class="add-item">
             <input id="campo-texto" type="text" placeholder="Insira o produto aqui!">
             <button class=btn-add>Adicionar</button>
         </section>
+
         <section class="lista">
             <div class="titulo-compras">
                 <h2>Lista de Compras:</h2>
             </div>
+
+            <!-- AQUI VÃO OS ITEMS -->
+            <div class="item">
+                <div class="item-icone">
+                    <i class="mdi mdi-checkbox-blank"></i>
+                </div>
+                <div class="item-nome">
+                    Testando...
+                </div>
+                <div class="item-botao">
+                    <button class="delete"> <i class="mdi mdi-trash-can-outline"></i> Deletar</button>
+                </div>
+           </div>
+           
         </section>
+
         <section class="soma">
             <div class="titulo-compras">
                 <h2>Total das Compras:</h2>
+
+                <!-- AQUI VAI  O TOTAL -->
             </div>
         </section>
     </main>
