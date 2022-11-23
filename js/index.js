@@ -12,7 +12,9 @@ function addNewItem() {
     let valorCampo = campoTexto.value;
 
     if((valorCampo !== "") && (valorCampo !== null) && (valorCampo !== undefined)){
-        let novoItem = `<div id="${listado.length}" class="item">
+        
+        if((valorCampo.length > 7) && (valorCampo.length < 65)){
+            let novoItem = `<div id="${listado.length}" class="item">
     <div onclick="selecionaItem(${listado.length})" class="item-icone">
         <i id="icon_${listado.length}" class="mdi mdi-checkbox-blank"></i>
     </div>
@@ -30,6 +32,9 @@ function addNewItem() {
     localStorage.setItem("listado", JSON.stringify(listado));
 
     checkAnimation();
+        } else {
+            window.alert("O nome do Item deve ter entre 8 e 64 caracteres.");
+        }
     }
 
     campoTexto.value = "";
@@ -84,7 +89,7 @@ function checkAnimation() {
 }
 
 // REMOVER ANTES DE ENTREGAR!!!!!!!! é só para teste!
-campoTexto.addEventListener("keyup", function(event){
+campoTexto.addEventListener("keydown", function(event){
 //a tecla enter tem valor 13
     if(event.keyCode === 13){
         event.preventDefault;
@@ -93,25 +98,10 @@ campoTexto.addEventListener("keyup", function(event){
 })
 
 // REMOVER ANTES DE ENTREGAR!!!!!!!! é só para teste!
-campoPreco.addEventListener("keyup", function(event){
+campoPreco.addEventListener("keydown", function(event){
     //a tecla enter tem valor 13
         if(event.keyCode === 13){
             event.preventDefault;
             butaoPreco.click();
         }
 })
-
-
-// function formaLayout() {
-//     let paddingItem = `<div class="item"></div>`;
-
-//     if(listado.length === 0) {
-//          paddingItem += `<div class="item"></div>`;
-//          paddingItem += `<div class="item"></div>`;
-//          paddingItem += `<div class="item"></div>`;
-//          paddingItem += `<div class="item"></div>`;
-//          paddingItem += `<div class="item"></div>`;
-//          paddingItem += `<div class="item"></div>`;
-//     lista.innerHTML += paddingItem;
-//     }
-// }
