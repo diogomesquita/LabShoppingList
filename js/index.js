@@ -45,7 +45,7 @@ function selecionaItem(id) {
     if (selecionado.classList.contains("clicado")) {
         selecionado.classList.remove("clicado");
         novoIcone.classList.replace("mdi-checkbox-marked", "mdi-checkbox-blank");
-        mudaDiv.classList.add("off");
+        mudaDiv.classList.remove("on");
     } else {
         novoIcone.classList.replace("mdi-checkbox-blank", "mdi-checkbox-marked");
         selecionado.classList.add("clicado");

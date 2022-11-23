@@ -200,9 +200,6 @@ body {
 .popup.on {
     display: block;
 }
-.popup.off {
-    display: none;
-}
 
 .preco {
     display: flex;
