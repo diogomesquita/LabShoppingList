@@ -140,8 +140,8 @@ body {
     background: rgb(209, 39, 33);
     color: rgb(212, 211, 211);
     border-bottom-right-radius: 15px;
-    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
-;    cursor: pointer;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
 }
 
 .titulo-compras {
@@ -253,7 +253,7 @@ body {
 
 .btn-preco {
     width: 25%;
-    min-height: 42px;
+    min-height: 43px;
     font-size: 26px;
     font-weight: bold;
     color: rgb(212, 211, 211);
