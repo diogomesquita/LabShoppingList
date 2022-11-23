@@ -80,6 +80,11 @@ function somaPreco() {
     campoPreco.focus();
 }
 
+function limpaTotal() {
+    valorTotal = 0.0;
+    mostraValorTotal.innerHTML = `<h2>R$ ${valorTotal} </h2>`;
+}
+
 function checkAnimation() {
     let sucesso = document.getElementById('sucesso');
     sucesso.classList.add("on");
