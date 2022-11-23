@@ -1,6 +1,10 @@
 let campoTexto = document.querySelector('#campo-texto');
-let butao = document.querySelector('.btn-add');
+let campoPreco = document.querySelector('#campo-preco');
+let butaoPreco = document.querySelector('.btn-preco');
+let butaoTexto = document.querySelector('.btn-add');
 let lista = document.querySelector('.lista');
+let mostraValorTotal = document.querySelector('.valorTotal');
+let valorTotal = 0.0;
 let listado = [];
 
 function addNewItem() {
@@ -46,11 +50,35 @@ function selecionaItem(id) {
     }
 }
 
-// REMOVER ANTES DE ENTREGAR!!!!!!!!
+function somaPreco() {
+    let fechaDiv = document.getElementById('mudaEstado');
+    let preco = Number(campoPreco.value);
+
+    valorTotal += preco;
+
+    let atualizaPreco = `<h2>R$ ${valorTotal}</h2>`;
+
+    mostraValorTotal.innerHTML = atualizaPreco;
+
+    campoPreco.value = "";
+
+    fechaDiv.classList.add("popdown")
+}
+
+// REMOVER ANTES DE ENTREGAR!!!!!!!! é só para teste!
 campoTexto.addEventListener("keyup", function(event){
 //a tecla enter tem valor 13
     if(event.keyCode === 13){
         event.preventDefault;
-        butao.click();
+        butaoTexto.click();
     }
 })
+
+// REMOVER ANTES DE ENTREGAR!!!!!!!! é só para teste!
+campoPreco.addEventListener("keyup", function(event){
+    //a tecla enter tem valor 13
+        if(event.keyCode === 13){
+            event.preventDefault;
+            butaoPreco.click();
+        }
+    })

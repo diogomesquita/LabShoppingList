@@ -91,6 +91,12 @@ body {
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+.valorTotal {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
 .valor {
     display: flex;
     flex-flow: row wrap;
@@ -178,6 +184,7 @@ body {
 }
 
 .popup {
+    display: block;
     position: absolute;
     width: 45%;
     min-height: 200px;
@@ -188,6 +195,10 @@ body {
     background: rgb(150, 89, 40);
     border-radius: 15px;
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+}
+
+.popup.popdown {
+    display: none;
 }
 
 .preco {
@@ -204,7 +215,7 @@ body {
     margin: 0;
 }
 
-#btn-preco {
+.btn-preco {
     width: 25%;
     min-height: 42px;
     font-size: 26px;
