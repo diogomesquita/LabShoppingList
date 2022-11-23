@@ -96,7 +96,6 @@ body {
 .soma {
     display: flex;
     flex-flow: column wrap;
-    margin: auto auto;
     margin-right: 0;
     border-radius: 15px;
     width: 31%;
@@ -109,6 +108,8 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    width: 100%;
+    min-height: 100px;
 }
 
 .valor {
@@ -116,7 +117,7 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-content:flex-start;
-    font-size: 30px;
+    font-size: 34px;
     min-width: 70%;
     min-height: 65px;
     margin-top: 5px;

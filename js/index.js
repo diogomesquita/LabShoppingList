@@ -63,9 +63,10 @@ function selecionaItem(id) {
 }
 
 function somaPreco() {
-    let preco = Number(campoPreco.value);
+    let padraoBR = campoPreco.value.replace(",", ".")
+    let preco = Number(padraoBR);
     
-    if(!isNaN(campoPreco.value) && preco >= 0){
+    if(!isNaN(padraoBR) && preco >= 0){
         valorTotal += preco;
         let atualizaPreco = `<h2>R$ ${valorTotal}</h2>`;
         mostraValorTotal.innerHTML = atualizaPreco;
