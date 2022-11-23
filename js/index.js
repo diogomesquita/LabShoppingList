@@ -91,16 +91,16 @@ campoPreco.addEventListener("keyup", function(event){
 })
 
 
-function formaLayout() {
-    let paddingItem = `<div class="item"></div>`;
+// function formaLayout() {
+//     let paddingItem = `<div class="item"></div>`;
 
-    if(listado.length === 0) {
-         paddingItem += `<div class="item"></div>`;
-         paddingItem += `<div class="item"></div>`;
-         paddingItem += `<div class="item"></div>`;
-         paddingItem += `<div class="item"></div>`;
-         paddingItem += `<div class="item"></div>`;
-
-    lista.innerHTML += paddingItem;
-    }
-}
+//     if(listado.length === 0) {
+//          paddingItem += `<div class="item"></div>`;
+//          paddingItem += `<div class="item"></div>`;
+//          paddingItem += `<div class="item"></div>`;
+//          paddingItem += `<div class="item"></div>`;
+//          paddingItem += `<div class="item"></div>`;
+//          paddingItem += `<div class="item"></div>`;
+//     lista.innerHTML += paddingItem;
+//     }
+// }
