@@ -53,16 +53,19 @@ function selecionaItem(id) {
 function somaPreco() {
     let fechaDiv = document.getElementById('mudaEstado');
     let preco = Number(campoPreco.value);
+    
+    if(!isNaN(campoPreco.value) && preco >= 0){
+        valorTotal += preco;
+        let atualizaPreco = `<h2>R$ ${valorTotal}</h2>`;
+        mostraValorTotal.innerHTML = atualizaPreco;
 
-    valorTotal += preco;
-
-    let atualizaPreco = `<h2>R$ ${valorTotal}</h2>`;
-
-    mostraValorTotal.innerHTML = atualizaPreco;
+        fechaDiv.classList.add("popdown")
+    } else {
+        window.alert("Informe um valor válido!")
+    }
 
     campoPreco.value = "";
-
-    fechaDiv.classList.add("popdown")
+    campoPreco.focus();
 }
 
 // REMOVER ANTES DE ENTREGAR!!!!!!!! é só para teste!
