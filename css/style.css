@@ -86,7 +86,7 @@ body {
     margin-right: 0;
     border-radius: 15px;
     width: 31%;
-    min-height: 250px;
+    min-height: 270px;
     background: white;
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
@@ -179,10 +179,8 @@ body {
 
 .preco {
     position: absolute;
-    margin: auto auto;
-    margin-top: 65px;
     width: 50%;
-    min-height: 175px;
+    min-height: 200px;
     border: 1px solid black;
     font-size: 24px;
     text-align: center;
@@ -195,14 +193,16 @@ body {
 #campo-preco {
     width: 70%;
     min-height: 42px;
+    font-size: 22px;
+    margin: 0;
 }
 
 #btn-preco {
-    width: 25%;
+    width: 28%;
     min-height: 42px;
-    margin: auto auto;
     font-size: 26px;
     font-weight: bold;
     color: rgb(212, 211, 211);
     background: rgb(26, 121, 17);
+    cursor: pointer;
 }
