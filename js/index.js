@@ -23,6 +23,7 @@ function addNewItem() {
         <button onclick="deletaItem(${listado.length})" class="delete"> <i class="mdi mdi-trash-can-outline"></i> Deletar</button>
     </div>
 </div>`;
+
     lista.innerHTML += novoItem;
 
     listado.push(valorCampo);
@@ -50,6 +51,7 @@ function selecionaItem(id) {
         novoIcone.classList.replace("mdi-checkbox-blank", "mdi-checkbox-marked");
         selecionado.classList.add("clicado");
         mudaDiv.classList.add("on");
+        campoPreco.focus();
     }
 }
 
@@ -61,7 +63,7 @@ function somaPreco() {
         let atualizaPreco = `<h2>R$ ${valorTotal}</h2>`;
         mostraValorTotal.innerHTML = atualizaPreco;
 
-        mudaDiv.classList.add("off");
+        mudaDiv.classList.remove("on");
     } else {
         window.alert("Informe um valor válido!")
     }
@@ -86,4 +88,19 @@ campoPreco.addEventListener("keyup", function(event){
             event.preventDefault;
             butaoPreco.click();
         }
-    })
+})
+
+
+function formaLayout() {
+    let paddingItem = `<div class="item"></div>`;
+
+    if(listado.length === 0) {
+         paddingItem += `<div class="item"></div>`;
+         paddingItem += `<div class="item"></div>`;
+         paddingItem += `<div class="item"></div>`;
+         paddingItem += `<div class="item"></div>`;
+         paddingItem += `<div class="item"></div>`;
+
+    lista.innerHTML += paddingItem;
+    }
+}
