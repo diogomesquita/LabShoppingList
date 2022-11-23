@@ -1,9 +1,10 @@
+let mostraValorTotal = document.querySelector('.valorTotal');
 let campoTexto = document.querySelector('#campo-texto');
 let campoPreco = document.querySelector('#campo-preco');
 let butaoPreco = document.querySelector('.btn-preco');
 let butaoTexto = document.querySelector('.btn-add');
+let mudaDiv = document.getElementById('mudaEstado');
 let lista = document.querySelector('.lista');
-let mostraValorTotal = document.querySelector('.valorTotal');
 let valorTotal = 0.0;
 let listado = [];
 
@@ -44,14 +45,15 @@ function selecionaItem(id) {
     if (selecionado.classList.contains("clicado")) {
         selecionado.classList.remove("clicado");
         novoIcone.classList.replace("mdi-checkbox-marked", "mdi-checkbox-blank");
+        mudaDiv.classList.add("off");
     } else {
         novoIcone.classList.replace("mdi-checkbox-blank", "mdi-checkbox-marked");
         selecionado.classList.add("clicado");
+        mudaDiv.classList.add("on");
     }
 }
 
 function somaPreco() {
-    let fechaDiv = document.getElementById('mudaEstado');
     let preco = Number(campoPreco.value);
     
     if(!isNaN(campoPreco.value) && preco >= 0){
@@ -59,7 +61,7 @@ function somaPreco() {
         let atualizaPreco = `<h2>R$ ${valorTotal}</h2>`;
         mostraValorTotal.innerHTML = atualizaPreco;
 
-        fechaDiv.classList.add("popdown")
+        mudaDiv.classList.add("off");
     } else {
         window.alert("Informe um valor válido!")
     }
