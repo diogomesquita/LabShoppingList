@@ -94,7 +94,6 @@ function checkAnimation() {
 
 }
 
-// REMOVER ANTES DE ENTREGAR!!!!!!!! é só para teste!
 campoTexto.addEventListener("keydown", function(event){
 //a tecla enter tem valor 13
     if(event.keyCode === 13){
@@ -103,7 +102,6 @@ campoTexto.addEventListener("keydown", function(event){
     }
 })
 
-// REMOVER ANTES DE ENTREGAR!!!!!!!! é só para teste!
 campoPreco.addEventListener("keydown", function(event){
     //a tecla enter tem valor 13
         if(event.keyCode === 13){
