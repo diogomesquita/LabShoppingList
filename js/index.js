@@ -28,6 +28,8 @@ function addNewItem() {
 
     listado.push(valorCampo);
     localStorage.setItem("listado", JSON.stringify(listado));
+
+    checkAnimation();
     }
 
     campoTexto.value = "";
@@ -70,6 +72,15 @@ function somaPreco() {
 
     campoPreco.value = "";
     campoPreco.focus();
+}
+
+function checkAnimation() {
+    let sucesso = document.getElementById('sucesso');
+    sucesso.classList.add("on");
+    setTimeout(() => {
+        sucesso.classList.remove("on");
+    }, 700);
+
 }
 
 // REMOVER ANTES DE ENTREGAR!!!!!!!! é só para teste!

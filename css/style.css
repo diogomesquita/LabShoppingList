@@ -68,6 +68,18 @@ body {
     cursor: pointer;
 }
 
+.animation {
+    display: none;
+    position:absolute;
+    margin: 15px auto;
+    width: 10%;
+    height: 90px;
+}
+
+.animation.on {
+    display: block;
+}
+
 .lista {
     display: flex;
     flex-flow: column wrap;
