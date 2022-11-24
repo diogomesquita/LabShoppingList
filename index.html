@@ -27,25 +27,33 @@
             <button onclick="addNewItem()" class=btn-add> Adicionar</button>
         </section>
 
-        <section class="lista">
+        <section class="quadros">
+            <div class="quadro-lista">
+                <div class="lista">
             
-            <div class="titulo-compras">
-                <h2>Lista de Compras:</h2>
+                    <div class="titulo-compras">
+                        <h2>Lista de Compras</h2>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="quadro-soma">
+                <div class="soma">
+    
+                    <div class="titulo-compras"><h2>Total</h2></div>
+        
+                    <div class="valorTotal"></div>
+        
+                    <div class="butaoTotal">
+                        <button onclick="limpaTotal()">Zerar</button>
+                    </div>
+        
+                </div>
             </div>
             
         </section>
 
-        <section class="soma">
-
-            <div class="titulo-compras"><h2>Total</h2></div>
-
-            <div class="valorTotal"></div>
-
-            <div class="butaoTotal">
-                <button onclick="limpaTotal()">Zerar</button>
-            </div>
-
-        </section>
 
         <div id="mudaEstado" class="popup">
             <h2>Insira o Valor do Item</h2>

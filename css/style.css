@@ -33,10 +33,9 @@ body {
 
 .main {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: nowrap;
     margin: auto auto;
-    margin-top: 5px;
     width: 80%;
 }
 
@@ -44,6 +43,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     align-items:center;
+    margin-top: 5px;
     margin-bottom: 10px;
     width: 100%;
     height: 42px;
@@ -52,17 +52,17 @@ body {
 #campo-texto {
     margin: auto auto;
     font-size: 22px;
-    width: 69%;
+    flex: 78%;
     height: 42px;
 }
 
 .btn-add {
     margin: auto auto;
-    width: 31%;
+    flex: 22%;
     height: 42px;
     border-bottom-right-radius: 10px;
     background: rgb(26, 121, 17);
-    color: rgb(212, 211, 211);
+    color: rgb(238, 238, 238);
     font-size: 26px;
     font-weight: bold;
     cursor: pointer;
@@ -71,8 +71,9 @@ body {
 .animation {
     display: none;
     position:absolute;
-    margin: 15px auto;
-    width: 10%;
+    margin-left: 525px;
+    margin-top: 15px;
+    width: 7%;
     height: 90px;
 }
 
@@ -80,33 +81,38 @@ body {
     display: block;
 }
 
-.lista {
+.quadros {
     display: flex;
-    flex-flow: column wrap;
-    margin: auto auto;
-    margin-left: 0;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.quadro-lista {
+    flex:75%;
+}
+
+.quadro-soma {
+    margin-left: 10px;
+    flex: 20%;
+}
+
+.lista {
     border-radius: 15px;
-    width: 67%;
-    min-height: 270px;
-    /* background: rgb(231, 215, 126); */
+    min-height: 230px;
     background-image: url("../img/fundo-lista.png");
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
 }
 
 .soma {
-    display: flex;
-    flex-flow: column wrap;
-    margin-right: 0;
-    border-radius: 15px;
-    width: 31%;
-    min-height: 270px;
     background: rgb(231, 215, 126);
+    border-radius: 15px;
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .valorTotal {
     display: flex;
     flex-flow: row wrap;
+    font-size: 26px;
     justify-content: center;
     width: 100%;
     min-height: 100px;
@@ -117,7 +123,6 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-content:flex-start;
-    font-size: 34px;
     min-width: 70%;
     min-height: 65px;
     margin-top: 5px;
@@ -126,11 +131,11 @@ body {
 .butaoTotal {
     display: flex;
     flex-flow: row wrap;
-    margin-top: 70px;
+    margin-top: 22px;
     margin-bottom: 0;
     border-radius: 15px;
     width: 100%;
-    height: 60px;
+    height: 52px;
 }
 
 .butaoTotal button {
@@ -158,7 +163,7 @@ body {
 .titulo-compras h2 {
     display: flex;
     margin: auto auto;
-    font-size: 27px;
+    font-size: 34px;
     font-weight: bold;
     text-align: center;
     color: rgb(230, 184, 70);
@@ -186,14 +191,14 @@ body {
 }
 
 .item-icone {
-    flex: 15%;
+    flex: 5%;
     text-align: center;
     font-size: 28px;
     color: rgb(192, 165, 114);
 }
 
 .item-nome {
-    flex: 65%;
+    flex: 80%;
     font-size: 20px;
     font-weight:530;
     border-right: rgb(199, 147, 15);
@@ -201,7 +206,7 @@ body {
 }
 
 .item-botao {
-    flex: 20%;
+    flex: 15%;
 }
 
 .delete {
@@ -224,8 +229,8 @@ body {
     position: absolute;
     width: 45%;
     min-height: 200px;
-    border: 1px solid black;
     font-size: 26px;
+    margin: 50px 200px;
     text-align: center;
     color: rgb(231, 190, 87);
     background: rgb(150, 89, 40);
