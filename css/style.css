@@ -131,7 +131,7 @@ body {
 .butaoTotal {
     display: flex;
     flex-flow: row wrap;
-    margin-top: 22px;
+    margin-top: 34px;
     margin-bottom: 0;
     border-radius: 15px;
     width: 100%;

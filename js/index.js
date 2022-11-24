@@ -91,7 +91,6 @@ function checkAnimation() {
     setTimeout(() => {
         sucesso.classList.remove("on");
     }, 700);
-
 }
 
 campoTexto.addEventListener("keydown", function(event){
