@@ -53,6 +53,7 @@ body {
     margin: auto auto;
     font-size: 22px;
     flex: 78%;
+    min-width: 30%;
     height: 42px;
 }
 
@@ -83,16 +84,17 @@ body {
 
 .quadros {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
 }
 
 .quadro-lista {
-    flex:75%;
+    flex:78%;
+    max-width: 78%;
+    margin-right: 10px;
 }
 
 .quadro-soma {
-    margin-left: 10px;
     flex: 20%;
 }
 
@@ -171,11 +173,10 @@ body {
 
 .item {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     background: rgb(231, 215, 126);
-    width: 100%;
     height: 38px;
     border-bottom: 1px solid black;
     cursor: pointer;
@@ -203,6 +204,9 @@ body {
     font-weight:530;
     border-right: rgb(199, 147, 15);
     border-left: rgb(199, 147, 15);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .item-botao {
@@ -270,4 +274,92 @@ body {
 .rodape {
     width: 100%;
     height: 70px;
+}
+
+@media screen and (max-width: 881px) {
+    .valorTotal {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 772px) {
+    .header {
+        height: 120px;
+    }
+    .brand {
+        margin-top: 13px;
+    }
+    .brand h1 {
+        font-size: 48px;
+    }
+    .main {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+    }
+    .add-item {
+        height: 80px;
+    }
+
+    .valorTotal {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 691px) {
+    .valorTotal {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 564px) {
+    .valorTotal {
+        font-size: 14.5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        height: 100px;
+    }
+    .brand {
+        margin-top: 30px;
+    }
+    .brand h1 {
+        font-size: 34px;
+    }
+
+    .quadro-soma {
+        margin-left: 3px;
+    }
+
+    .titulo-compras h2 {
+        font-size: 32px;
+    }
+    .quadros {
+        flex-wrap: wrap;
+    }
+
+    .quadro-lista {
+        min-width: 100%;
+        margin-right: none;
+    }
+
+    .valorTotal {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 319px) {
+    .brand {
+        margin-top: 40px;
+    }
+
+    .brand h1 {
+        font-size: 30px;
+    }
+
+    .titulo-compras h2 {
+        font-size: 22px;
+    }
 }
