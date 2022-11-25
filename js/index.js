@@ -7,6 +7,8 @@ let mudaDiv = document.getElementById('mudaEstado');
 let lista = document.querySelector('.lista');
 let valorTotal = 0.0;
 let listado = [];
+let receptaculo;
+let resgatado;
 
 function addNewItem() {
     let valorCampo = campoTexto.value;
@@ -44,6 +46,8 @@ function addNewItem() {
 function deletaItem(id) {
     let deleta = document.getElementById(id);
     deleta.remove();
+    listado.splice(id, 1, null);
+    localStorage.setItem("listado", JSON.stringify(listado))
 }
 
 function selecionaItem(id) {
@@ -91,6 +95,36 @@ function checkAnimation() {
     setTimeout(() => {
         sucesso.classList.remove("on");
     }, 700);
+}
+
+function restauraLista() {
+    resgatado = localStorage.getItem("listado");
+    
+    if(resgatado !== null) {
+        receptaculo = JSON.parse(resgatado);
+        listado = receptaculo;
+    
+
+        let indice = -1;
+    listado.forEach( e => {
+        indice++;
+        if(e !== null){
+            let restauraItem = `<div id="${indice}" class="item">
+    <div onclick="selecionaItem(${indice})" class="item-icone">
+        <i id="icon_${indice}" class="mdi mdi-checkbox-blank"></i>
+    </div>
+    <div onclick="selecionaItem(${indice})" class="item-nome">
+        ${e}
+    </div>
+    <div class="item-botao">
+        <button onclick="deletaItem(${indice})" class="delete"> <i class="mdi mdi-trash-can-outline"></i> Deletar</button>
+    </div>
+</div>`;
+
+    lista.innerHTML += restauraItem;
+        }
+    });
+    }
 }
 
 campoTexto.addEventListener("keydown", function(event){
