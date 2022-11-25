@@ -1,1 +1,1 @@
-Projeto 01 do módulo 03 do programa FuturoDev.
+Projeto 01 do módulo 03 do programa FuturoDev - Senai - SC.

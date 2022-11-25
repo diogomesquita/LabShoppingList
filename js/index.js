@@ -5,9 +5,9 @@ let butaoPreco = document.querySelector('.btn-preco');
 let butaoTexto = document.querySelector('.btn-add');
 let mudaDiv = document.getElementById('mudaEstado');
 let lista = document.querySelector('.lista');
-let valorReceptaculo;
-let valorResgatado;
+let valorReceptaculo = 0.0;
 let valorTotal = 0.0;
+let valorResgatado;
 let listado = [];
 let receptaculo;
 let resgatado;
@@ -74,9 +74,9 @@ function somaPreco() {
     
     if(!isNaN(padraoBR) && preco >= 0){
         valorTotal += preco;
-        let atualizaPreco = `<h2>R$ ${valorTotal}</h2>`;
+        let atualizaPreco = `<h2>R$ ${valorTotal.toFixed(2)}</h2>`;
         mostraValorTotal.innerHTML = atualizaPreco;
-        localStorage.setItem("valorTotal", valorTotal);
+        localStorage.setItem("valorTotal", JSON.stringify(valorTotal));
 
         mudaDiv.classList.remove("on");
     } else {
@@ -90,7 +90,7 @@ function somaPreco() {
 function limpaTotal() {
     valorTotal = 0.0;
     mostraValorTotal.innerHTML = `<h2>R$ ${valorTotal} </h2>`;
-    localStorage.setItem("valorTotal", valorTotal);
+    localStorage.setItem("valorTotal", JSON.stringify(valorTotal));
 }
 
 function checkAnimation() {
@@ -101,16 +101,28 @@ function checkAnimation() {
     }, 700);
 }
 
+function checkStorage(armazenado) {
+    let soNull = true;
+    armazenado.forEach( (a) => {
+        if(a !== null) {
+            soNull = false;
+        }
+    });
+    return soNull;
+}
+
 function restauraLista() {
     resgatado = localStorage.getItem("listado");
     valorResgatado = localStorage.getItem("valorTotal");
+    valorReceptaculo = Number(JSON.parse(valorResgatado));
     
     if(resgatado !== null) {
         receptaculo = JSON.parse(resgatado);
         listado = receptaculo;
 
-        valorReceptaculo = Number(JSON.parse(valorResgatado));
+        let verificaStorage = checkStorage(listado);
 
+        if(verificaStorage === false) {
         let indice = -1;
     listado.forEach( e => {
         indice++;
@@ -131,12 +143,17 @@ function restauraLista() {
         }
     });
     valorTotal = valorReceptaculo
-    mostraValorTotal.innerHTML = valorTotal;
+    mostraValorTotal.innerHTML = `<h2>R$ ${valorTotal.toFixed(2)} </h2>`;
+        } else {
+            listado = [];
+            valorTotal = valorReceptaculo;
+            localStorage.setItem("listado", JSON.stringify(listado));
+            mostraValorTotal.innerHTML = `<h2>R$ ${valorTotal.toFixed(2)} </h2>`;
+        }
     }
 }
 
 campoTexto.addEventListener("keydown", function(event){
-//a tecla enter tem valor 13
     if(event.keyCode === 13){
         event.preventDefault;
         butaoTexto.click();
@@ -144,7 +161,6 @@ campoTexto.addEventListener("keydown", function(event){
 })
 
 campoPreco.addEventListener("keydown", function(event){
-    //a tecla enter tem valor 13
         if(event.keyCode === 13){
             event.preventDefault;
             butaoPreco.click();
