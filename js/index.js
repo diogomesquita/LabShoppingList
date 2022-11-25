@@ -90,6 +90,7 @@ function somaPreco() {
 function limpaTotal() {
     valorTotal = 0.0;
     mostraValorTotal.innerHTML = `<h2>R$ ${valorTotal} </h2>`;
+    localStorage.setItem("valorTotal", valorTotal);
 }
 
 function checkAnimation() {
