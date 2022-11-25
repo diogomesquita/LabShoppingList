@@ -5,6 +5,8 @@ let butaoPreco = document.querySelector('.btn-preco');
 let butaoTexto = document.querySelector('.btn-add');
 let mudaDiv = document.getElementById('mudaEstado');
 let lista = document.querySelector('.lista');
+let valorReceptaculo;
+let valorResgatado;
 let valorTotal = 0.0;
 let listado = [];
 let receptaculo;
@@ -74,6 +76,7 @@ function somaPreco() {
         valorTotal += preco;
         let atualizaPreco = `<h2>R$ ${valorTotal}</h2>`;
         mostraValorTotal.innerHTML = atualizaPreco;
+        localStorage.setItem("valorTotal", valorTotal);
 
         mudaDiv.classList.remove("on");
     } else {
@@ -99,11 +102,13 @@ function checkAnimation() {
 
 function restauraLista() {
     resgatado = localStorage.getItem("listado");
+    valorResgatado = localStorage.getItem("valorTotal");
     
     if(resgatado !== null) {
         receptaculo = JSON.parse(resgatado);
         listado = receptaculo;
-    
+
+        valorReceptaculo = Number(JSON.parse(valorResgatado));
 
         let indice = -1;
     listado.forEach( e => {
@@ -124,6 +129,8 @@ function restauraLista() {
     lista.innerHTML += restauraItem;
         }
     });
+    valorTotal = valorReceptaculo
+    mostraValorTotal.innerHTML = valorTotal;
     }
 }
 
